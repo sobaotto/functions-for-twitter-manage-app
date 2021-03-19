@@ -9,10 +9,10 @@ const postFunction = async () => {
 
   const db = admin.firestore();
 
-  // firestoreから取得した情報を必要なものだけ格納するリスト
+  // firestoreから取得した情報を必要なものだけ格納するリスト。
   const functionData = [];
 
-  // firestoreからユーザーの設定情報を取得する
+  // firestoreからユーザーの設定情報を取得する。
   const querySnapshot = await db.collection("functions").get();
   try {
     querySnapshot.forEach((doc) => {
@@ -25,7 +25,7 @@ const postFunction = async () => {
     console.log(error);
   }
 
-  // 取得した情報の中の、起動有無情報を判定してツイートする
+  // 取得した情報の中の、起動有無情報を判定してツイートする。
   functionData.forEach((data) => {
     if (data.switch === "ON") {
       // tweet();の自作モジュールでツイートできる。

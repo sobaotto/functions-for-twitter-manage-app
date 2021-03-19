@@ -8,7 +8,7 @@ const postFunction = require("./postFunction");
 //     postFunction();
 //   });
 
-// ユーザーが設定した情報をfirestoreから取得してツイートする関数
+// ユーザーが設定した情報をfirestoreから取得してツイートする関数。
 exports.httpPost = functions
   .region("asia-northeast1")
   .https.onRequest((request, response) => {
